@@ -1,131 +1,74 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#351c3b">
-<meta name="description" content="A living collection of Shakespeare's most memorable words.">
-<title>Shakespeare's Verses — Timeless words, forever falling.</title>
-<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
-<link rel="icon" type="image/png" sizes="192x192" href="favicon.png">
-<link rel="apple-touch-icon" href="apple-touch-icon.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
-<style>
-:root{--plum:#351c3b;--deep:#241329;--gold:#d6b35f;--gold-light:#ecd49a;--green:#286344;--cream:#f7e8d8;--muted:#c5b49d}
-*{box-sizing:border-box}
-html,body{margin:0;width:100%;min-height:100%;background:var(--deep);color:var(--cream)}
-body{font-family:"Playfair Display",Georgia,serif;overflow:hidden;background:radial-gradient(ellipse at 50% 38%,#49264b 0%,var(--plum) 48%,var(--deep) 100%);user-select:none}
-#stage{position:fixed;inset:0;width:100%;height:100%;display:block;touch-action:manipulation}
-header{position:fixed;z-index:2;top:clamp(18px,4vh,42px);left:50%;transform:translateX(-50%);width:min(92vw,760px);text-align:center;pointer-events:none}
-.brand-mark{width:clamp(34px,5vw,52px);height:auto;margin-bottom:5px;filter:drop-shadow(0 0 12px #d6b35f55)}
-h1{font-family:Cinzel,Georgia,serif;font-weight:600;font-size:clamp(1.25rem,4vw,2.25rem);letter-spacing:clamp(2px,.55vw,6px);line-height:1.2;color:var(--gold);margin:0;text-shadow:0 3px 18px #d6b35f33}
-header p{font-size:clamp(.76rem,1.7vw,.98rem);font-style:italic;color:var(--gold-light);margin:.55rem 0 0;opacity:.9}
-.ornament{color:var(--gold);letter-spacing:9px;margin-top:9px;font-size:.9rem;opacity:.8}
-.hint{position:fixed;z-index:2;bottom:clamp(82px,12vh,112px);left:0;right:0;text-align:center;color:var(--muted);font: .68rem Cinzel,serif;letter-spacing:2px;pointer-events:none;animation:pulse 3s ease-in-out infinite}
-@keyframes pulse{50%{opacity:.45}}
-.controls{position:fixed;z-index:3;bottom:clamp(17px,3vh,28px);left:50%;transform:translateX(-50%);display:flex;gap:10px;align-items:center;padding:10px 14px;background:#241329d9;border:1px solid #d6b35f77;border-radius:40px;backdrop-filter:blur(12px);box-shadow:0 8px 30px #0005;max-width:calc(100vw - 24px)}
-button{font:600 .7rem Cinzel,Georgia,serif;letter-spacing:.5px;color:var(--gold-light);background:transparent;border:1px solid var(--gold);border-radius:25px;padding:9px 16px;cursor:pointer;white-space:nowrap;transition:background .2s,color .2s,transform .2s}
-button:hover,button:focus-visible{background:var(--gold);color:var(--deep);outline:none}
-button:active{transform:scale(.97)}
-#modal{position:fixed;inset:0;z-index:5;display:grid;place-items:center;padding:clamp(14px,4vw,28px);background:#190c1dd9;backdrop-filter:blur(13px);opacity:0;visibility:hidden;transition:opacity .25s,visibility .25s}
-#modal.active{opacity:1;visibility:visible}
-.modal-card{width:min(100%,620px);max-height:86vh;overflow:auto;text-align:center;padding:clamp(26px,6vw,48px) clamp(20px,5vw,42px);border:1.5px solid var(--gold);border-radius:18px;background:linear-gradient(145deg,#452649,#28162f);box-shadow:0 25px 70px #0009;transform:translateY(16px);transition:transform .3s}
-#modal.active .modal-card{transform:translateY(0)}
-.modal-ornament{color:var(--gold);font-size:1.4rem;margin-bottom:18px}
-.modal-quote{font-size:clamp(1.2rem,4vw,1.8rem);font-style:italic;line-height:1.55;margin:0 0 26px}
-.modal-meta{border-top:1px solid #d6b35f55;padding-top:18px;font-family:Cinzel,Georgia,serif;color:var(--gold)}
-.modal-character{display:block;color:var(--gold-light);font-weight:700;margin-bottom:7px}
-.modal-play{font-size:.78rem;color:var(--muted)}
-.close-hint{margin-top:24px;color:var(--muted);font: .65rem Cinzel,serif;letter-spacing:1.4px}
-@media(max-width:600px){header{top:16px}.ornament{margin-top:5px}.controls{gap:7px;padding:8px 10px}.controls button{padding:8px 11px;font-size:.62rem}.hint{bottom:76px}.modal-card{border-radius:14px}}
-@media(max-height:560px){header{top:8px}.brand-mark{width:27px}header p{margin-top:3px}.ornament{display:none}.hint{bottom:65px}.controls{bottom:8px}}
-@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#351c3b">
+  <meta name="description" content="A living collection of Shakespeare's most memorable words.">
+  <title>Shakespeare's Verses — Timeless words, forever falling.</title>
+
+  <!-- Sharing preview (WhatsApp, social networks) -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Shakespeare's Verses">
+  <meta property="og:description" content="Timeless words, forever falling.">
+  <meta property="og:url" content="https://andguerreiro.github.io/shakespeare/">
+  <meta property="og:image" content="https://andguerreiro.github.io/shakespeare/favicon.png">
+  <meta name="twitter:card" content="summary">
+
+  <!-- Icons -->
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="favicon.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header>
-  <img class="brand-mark" src="favicon.png" alt="" aria-hidden="true">
-  <h1>Shakespeare's Verses</h1>
-  <p>Timeless words, forever falling.</p>
-  <div class="ornament">✦ ❧ ✦</div>
-</header>
-<canvas id="stage" aria-label="Falling Shakespeare quotations. Select a quotation to read its source."></canvas>
-<div class="hint">SELECT A FALLING VERSE TO DISCOVER ITS STORY</div>
-<div class="controls">
-  <button id="pauseBtn" type="button">Pause</button>
-  <button id="speedBtn" type="button">Speed: Normal</button>
-  <button id="shuffleBtn" type="button">New verses</button>
-</div>
-<div id="modal" role="dialog" aria-modal="true" aria-labelledby="quoteText">
-  <div class="modal-card">
-    <div class="modal-ornament">❧ ✦ ❧</div>
-    <p class="modal-quote" id="quoteText"></p>
-    <div class="modal-meta"><span class="modal-character" id="quoteCharacter"></span><span class="modal-play" id="quoteSource"></span></div>
-    <div class="close-hint">TAP OR CLICK TO RETURN</div>
+  <header>
+    <img class="brand-mark" src="favicon.png" alt="" aria-hidden="true">
+    <h1>Shakespeare's Verses</h1>
+    <p>Timeless words, forever falling.</p>
+    <div class="ornament">✦ ❧ ✦</div>
+  </header>
+
+  <canvas id="stage" aria-label="Falling Shakespeare quotations. Select a quotation to read its source."></canvas>
+  <noscript><p class="hint">This page needs JavaScript to show the falling verses.</p></noscript>
+
+  <div class="hint">SELECT A FALLING VERSE TO DISCOVER ITS STORY</div>
+
+  <div class="controls" role="group" aria-label="Playback controls">
+    <button id="pauseBtn" type="button" aria-pressed="false">Pause</button>
+
+    <div class="control-group" role="group" aria-label="Verse size">
+      <span class="control-label"><span class="label-full">Size</span><span class="label-short">Aa</span></span>
+      <button id="sizeDown" class="step-btn" type="button" aria-label="Smaller verses">−</button>
+      <button id="sizeUp" class="step-btn" type="button" aria-label="Larger verses">+</button>
+    </div>
+
+    <div class="control-group" role="group" aria-label="Falling speed">
+      <span class="control-label"><span class="label-full">Speed</span><span class="label-short">»</span></span>
+      <button id="speedDown" class="step-btn" type="button" aria-label="Slower">−</button>
+      <button id="speedUp" class="step-btn" type="button" aria-label="Faster">+</button>
+    </div>
   </div>
-</div>
-<script>
-const quotes = [{"text": "To be, or not to be, that is the question.", "character": "Hamlet", "play": "Hamlet", "act": "Act 3, Scene 1"}, {"text": "All the world's a stage, and all the men and women merely players.", "character": "Jaques", "play": "As You Like It", "act": "Act 2, Scene 7"}, {"text": "What's in a name? That which we call a rose by any other name would smell as sweet.", "character": "Juliet", "play": "Romeo and Juliet", "act": "Act 2, Scene 2"}, {"text": "The course of true love never did run smooth.", "character": "Lysander", "play": "A Midsummer Night's Dream", "act": "Act 1, Scene 1"}, {"text": "Some are born great, some achieve greatness, and some have greatness thrust upon them.", "character": "Malvolio", "play": "Twelfth Night", "act": "Act 2, Scene 5"}, {"text": "All that glisters is not gold.", "character": "Prince of Morocco", "play": "The Merchant of Venice", "act": "Act 2, Scene 7"}, {"text": "The quality of mercy is not strained.", "character": "Portia", "play": "The Merchant of Venice", "act": "Act 4, Scene 1"}, {"text": "We are such stuff as dreams are made on.", "character": "Prospero", "play": "The Tempest", "act": "Act 4, Scene 1"}, {"text": "Brevity is the soul of wit.", "character": "Polonius", "play": "Hamlet", "act": "Act 2, Scene 2"}, {"text": "The lady doth protest too much, methinks.", "character": "Gertrude", "play": "Hamlet", "act": "Act 3, Scene 2"}, {"text": "Something is rotten in the state of Denmark.", "character": "Marcellus", "play": "Hamlet", "act": "Act 1, Scene 4"}, {"text": "There is nothing either good or bad, but thinking makes it so.", "character": "Hamlet", "play": "Hamlet", "act": "Act 2, Scene 2"}, {"text": "Good night, good night! Parting is such sweet sorrow.", "character": "Juliet", "play": "Romeo and Juliet", "act": "Act 2, Scene 2"}, {"text": "A plague o' both your houses!", "character": "Mercutio", "play": "Romeo and Juliet", "act": "Act 3, Scene 1"}, {"text": "But, soft! What light through yonder window breaks?", "character": "Romeo", "play": "Romeo and Juliet", "act": "Act 2, Scene 2"}, {"text": "These violent delights have violent ends.", "character": "Friar Laurence", "play": "Romeo and Juliet", "act": "Act 2, Scene 6"}, {"text": "Double, double toil and trouble; fire burn, and cauldron bubble.", "character": "Three Witches", "play": "Macbeth", "act": "Act 4, Scene 1"}, {"text": "Out, damned spot! Out, I say!", "character": "Lady Macbeth", "play": "Macbeth", "act": "Act 5, Scene 1"}, {"text": "Fair is foul, and foul is fair.", "character": "Three Witches", "play": "Macbeth", "act": "Act 1, Scene 1"}, {"text": "What's done cannot be undone.", "character": "Lady Macbeth", "play": "Macbeth", "act": "Act 5, Scene 1"}, {"text": "Life's but a walking shadow, a poor player.", "character": "Macbeth", "play": "Macbeth", "act": "Act 5, Scene 5"}, {"text": "Friends, Romans, countrymen, lend me your ears.", "character": "Mark Antony", "play": "Julius Caesar", "act": "Act 3, Scene 2"}, {"text": "Et tu, Brute? Then fall, Caesar!", "character": "Julius Caesar", "play": "Julius Caesar", "act": "Act 3, Scene 1"}, {"text": "The fault, dear Brutus, is not in our stars, but in ourselves.", "character": "Cassius", "play": "Julius Caesar", "act": "Act 1, Scene 2"}, {"text": "Cowards die many times before their deaths; the valiant never taste of death but once.", "character": "Julius Caesar", "play": "Julius Caesar", "act": "Act 2, Scene 2"}, {"text": "Lord, what fools these mortals be!", "character": "Puck", "play": "A Midsummer Night's Dream", "act": "Act 3, Scene 2"}, {"text": "Though she be but little, she is fierce.", "character": "Helena", "play": "A Midsummer Night's Dream", "act": "Act 3, Scene 2"}, {"text": "Love looks not with the eyes, but with the mind.", "character": "Helena", "play": "A Midsummer Night's Dream", "act": "Act 1, Scene 1"}, {"text": "O brave new world, that has such people in't!", "character": "Miranda", "play": "The Tempest", "act": "Act 5, Scene 1"}, {"text": "If you prick us, do we not bleed?", "character": "Shylock", "play": "The Merchant of Venice", "act": "Act 3, Scene 1"}, {"text": "How sharper than a serpent's tooth it is to have a thankless child!", "character": "King Lear", "play": "King Lear", "act": "Act 1, Scene 4"}, {"text": "Nothing will come of nothing.", "character": "King Lear", "play": "King Lear", "act": "Act 1, Scene 1"}, {"text": "Now is the winter of our discontent.", "character": "Richard", "play": "Richard III", "act": "Act 1, Scene 1"}, {"text": "A horse! A horse! My kingdom for a horse!", "character": "Richard", "play": "Richard III", "act": "Act 5, Scene 4"}, {"text": "If music be the food of love, play on.", "character": "Orsino", "play": "Twelfth Night", "act": "Act 1, Scene 1"}, {"text": "Uneasy lies the head that wears a crown.", "character": "King Henry IV", "play": "Henry IV, Part 2", "act": "Act 3, Scene 1"}, {"text": "We know what we are, but know not what we may be.", "character": "Ophelia", "play": "Hamlet", "act": "Act 4, Scene 5"}, {"text": "The better part of valour is discretion.", "character": "Falstaff", "play": "Henry IV, Part 1", "act": "Act 5, Scene 4"}, {"text": "Love all, trust a few, do wrong to none.", "character": "Countess", "play": "All's Well That Ends Well", "act": "Act 1, Scene 1"}, {"text": "Our doubts are traitors, and make us lose the good we oft might win.", "character": "Lucio", "play": "Measure for Measure", "act": "Act 1, Scene 4"}];
-const canvas=document.getElementById('stage'),ctx=canvas.getContext('2d');
-const modal=document.getElementById('modal'),quoteText=document.getElementById('quoteText');
-const quoteCharacter=document.getElementById('quoteCharacter'),quoteSource=document.getElementById('quoteSource');
-const pauseBtn=document.getElementById('pauseBtn'),speedBtn=document.getElementById('speedBtn');
-let W=0,H=0,dpr=1,particles=[],paused=false,speed=1,speedIndex=0,last=0;
-const speeds=[1,1.55,.55],speedLabels=['Normal','Fast','Slow'];
-const mobile=()=>matchMedia('(max-width: 700px)').matches;
-const fontFamily='"Playfair Display", Georgia, serif';
-function resize(){
-  dpr=Math.min(devicePixelRatio||1,2);W=innerWidth;H=innerHeight;
-  canvas.width=Math.round(W*dpr);canvas.height=Math.round(H*dpr);
-  ctx.setTransform(dpr,0,0,dpr,0,0);initParticles();
-}
-function wrap(text,maxWidth,size){
-  ctx.font=`${size}px ${fontFamily}`;const words=(`“${text}”`).split(' '),lines=[];let line='';
-  for(const word of words){const test=line?line+' '+word:word;if(ctx.measureText(test).width>maxWidth&&line){lines.push(line);line=word}else line=test}
-  if(line)lines.push(line);return lines;
-}
-const columnCount=()=>mobile()?1:Math.max(2,Math.floor(W/800));
-let cols=1,rows=5;
-function layout(){cols=columnCount();rows=Math.max(2,Math.min(5,Math.floor(H/160)))}
-function makeParticle(i,respawn=false,self=null){
-  const size=mobile()?14:18,colW=W/cols,maxWidth=Math.min(colW*.86,mobile()?400:540);
-  const used=new Set(particles.filter(q=>q!==self).map(q=>q.quote)),pool=quotes.filter(q=>!used.has(q)),quote=pool[Math.floor(Math.random()*pool.length)],lines=wrap(quote.text,maxWidth,size),lineH=size*1.65;
-  ctx.font=`${size}px ${fontFamily}`;const blockW=Math.max(...lines.map(x=>ctx.measureText(x).width));
-  const col=i%cols,row=Math.floor(i/cols),blockH=lines.length*lineH;
-  const x=Math.max(14,Math.min(col*colW+(colW-blockW)/2,W-blockW-14));
-  let y=H*((row+col/cols)/rows)-blockH;
-  if(respawn){let top=0;for(const q of particles)if(q!==self&&q.col===col)top=Math.min(top,q.y);y=top-size*3-blockH}
-  return {quote,lines,size,lineH,blockW,blockH,x,y,
-    col,speed:.42+Math.random()*.3,opacity:.5+Math.random()*.22,phase:Math.random()*6.28,drift:5+Math.random()*5,hover:false};
-}
-function initParticles(){layout();const count=cols*rows;particles=[];for(let i=0;i<count;i++)particles.push(makeParticle(i))}
-function draw(p){
-  ctx.save();ctx.font=`${p.size}px ${fontFamily}`;ctx.textBaseline='top';ctx.textAlign='left';
-  ctx.fillStyle=p.hover?'rgba(236,212,154,.98)':`rgba(247,232,216,${p.opacity})`;
-  ctx.shadowColor=p.hover?'rgba(214,179,95,.8)':'rgba(20,8,25,.55)';ctx.shadowBlur=p.hover?15:5;
-  const x=p.x+Math.sin(p.phase)*p.drift;
-  p.lines.forEach((line,i)=>ctx.fillText(line,x,p.y+i*p.lineH));ctx.restore();
-}
-function contains(p,x,y){const px=p.x+Math.sin(p.phase)*p.drift;return x>=px-12&&x<=px+p.blockW+12&&y>=p.y-10&&y<=p.y+p.blockH+10}
-function animate(t=0){
-  const dt=Math.min((t-last||16.67)/16.67,2);last=t;ctx.clearRect(0,0,W,H);
-  if(!paused){for(const p of particles){p.y+=p.speed*speed*dt;p.phase+=.008*dt;if(p.y>H+40)Object.assign(p,makeParticle(particles.indexOf(p),true,p))}}
-  for(const p of particles)draw(p);requestAnimationFrame(animate);
-}
-function showQuote(q){paused=true;pauseBtn.textContent='Resume';quoteText.textContent=`“${q.text}”`;quoteCharacter.textContent=q.character;quoteSource.textContent=`${q.play} · ${q.act}`;modal.classList.add('active')}
-function closeModal(){modal.classList.remove('active');paused=false;pauseBtn.textContent='Pause'}
-canvas.addEventListener('click',e=>{if(modal.classList.contains('active'))return;const r=canvas.getBoundingClientRect(),x=e.clientX-r.left,y=e.clientY-r.top;for(let i=particles.length-1;i>=0;i--)if(contains(particles[i],x,y)){showQuote(particles[i].quote);break}});
-canvas.addEventListener('pointermove',e=>{if(e.pointerType!=='mouse')return;const r=canvas.getBoundingClientRect(),x=e.clientX-r.left,y=e.clientY-r.top;let hit=false;for(const p of particles){p.hover=!hit&&contains(p,x,y);if(p.hover)hit=true}canvas.style.cursor=hit?'pointer':'default'});
-modal.addEventListener('click',closeModal);
-document.addEventListener('keydown',e=>{if(e.key==='Escape'&&modal.classList.contains('active'))closeModal();if(e.code==='Space'&&!modal.classList.contains('active')&&!['BUTTON'].includes(e.target.tagName)){e.preventDefault();togglePause()}});
-function togglePause(){paused=!paused;pauseBtn.textContent=paused?'Resume':'Pause'}
-pauseBtn.addEventListener('click',togglePause);
-speedBtn.addEventListener('click',()=>{speedIndex=(speedIndex+1)%speeds.length;speed=speeds[speedIndex];speedBtn.textContent=`Speed: ${speedLabels[speedIndex]}`});
-document.getElementById('shuffleBtn').addEventListener('click',()=>initParticles());
-document.fonts.ready.then(()=>{resize();requestAnimationFrame(animate)});
-window.addEventListener('resize',resize);
-</script>
+
+  <div id="modal" role="dialog" aria-modal="true" aria-labelledby="quoteText">
+    <div class="modal-card" tabindex="-1">
+      <div class="modal-ornament">❧ ✦ ❧</div>
+      <p class="modal-quote" id="quoteText"></p>
+      <div class="modal-meta">
+        <span class="modal-character" id="quoteCharacter"></span>
+        <span class="modal-play" id="quoteSource"></span>
+      </div>
+      <div class="close-hint">TAP OR CLICK TO RETURN</div>
+    </div>
+  </div>
+
+  <script src="quotes.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
