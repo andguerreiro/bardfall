@@ -1,6 +1,6 @@
 # Bardfall
 
-> Shakespeare's verses, timeless words, forever falling.
+> Shakespeare's verses, forever falling.
 
 A small web page where famous lines from Shakespeare's plays drift down the screen. Select a verse to see who says it, in which play, and in which act and scene.
 
