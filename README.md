@@ -1,10 +1,10 @@
-# Shakespeare's Verses
+# Bardfall
 
-> Timeless words, forever falling.
+> Shakespeare's verses, timeless words, forever falling.
 
 A small web page where famous lines from Shakespeare's plays drift down the screen. Select a verse to see who says it, in which play, and in which act and scene.
 
-**Live site:** https://andguerreiro.github.io/shakespeare/
+**Live site:** https://bardfall.pages.dev/
 
 No build step, no dependencies: plain HTML, CSS and JavaScript.
 
@@ -31,12 +31,13 @@ Size and speed each have 5 steps (size from 80% to 130%, speed from 0.4× to 2×
 ## Project structure
 
 ```
-shakespeare/
+bardfall/
 ├── index.html           Page structure (header, controls, verse popup)
 ├── style.css            All styles, grouped by component
 ├── script.js            Animation, layout, controls and popup
 ├── quotes.js            The verses (one per line)
 ├── sitemap.xml          Page list for search engines
+├── robots.txt           Crawler rules and sitemap location
 ├── favicon.png          Icon, 192 px
 ├── favicon-32.png       Icon for browser tabs
 ├── favicon.ico          Icon for older browsers (16, 32 and 48 px)
@@ -45,7 +46,7 @@ shakespeare/
 
 ## Run locally
 
-Open `index.html` in a browser. To serve it the way GitHub Pages does:
+Open `index.html` in a browser. To serve it the way a static host does:
 
 ```bash
 python3 -m http.server 8000
@@ -67,13 +68,13 @@ Keep each verse on its own line, and don't repeat a text that is already in the 
 
 Everything adjustable lives in the `CONFIG` block at the top of `script.js`: breakpoints, pixels per column, font sizes, text width, speed and opacity ranges, and the size and speed steps. Colors and fonts are in `style.css`, with the color variables at the top of the file.
 
-## Deploy with GitHub Pages
+## Deploy with Cloudflare Pages
 
 1. Push the files to the `main` branch.
-2. In the repository, go to **Settings → Pages**.
-3. Choose **Deploy from a branch**, then the `main` branch and the `/ (root)` folder, and save.
+2. In the Cloudflare dashboard, create a Pages project from the Git repository (**Workers & Pages → Create → Pages → Connect to Git**).
+3. Use no framework preset, leave the build command empty and keep the output directory as the repository root.
 
-The site is published at `https://<your-user>.github.io/<repository>/`. Keep all files in the same folder so the scripts, styles and icons are found.
+Every push to `main` publishes a new version. The site is served from the root of its domain (`https://<project>.pages.dev/`), so `robots.txt` and `sitemap.xml` are found by search engines. If the project gets a different address, update the URL in `index.html` (canonical and `og:` tags), `sitemap.xml` and `robots.txt`.
 
 ## Credits
 

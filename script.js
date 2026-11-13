@@ -27,7 +27,7 @@ const CONFIG = {
   speedSteps: [0.4, 0.7, 1, 1.5, 2],
   defaultStep: 2,
 
-  storageKey: 'shakespeare-verses-settings',
+  storageKey: 'bardfall-settings',
   fontFamily: '"Playfair Display", Georgia, serif',
 };
 
