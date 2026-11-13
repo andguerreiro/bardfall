@@ -36,6 +36,7 @@ shakespeare/
 ├── style.css            All styles, grouped by component
 ├── script.js            Animation, layout, controls and popup
 ├── quotes.js            The verses (one per line)
+├── sitemap.xml          Page list for search engines
 ├── favicon.png          Icon, 192 px
 ├── favicon-32.png       Icon for browser tabs
 ├── favicon.ico          Icon for older browsers (16, 32 and 48 px)
