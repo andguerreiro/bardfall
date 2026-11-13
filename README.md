@@ -79,3 +79,7 @@ The site is published at `https://<your-user>.github.io/<repository>/`. Keep all
 
 - Verses: William Shakespeare (public domain).
 - Fonts: [Cinzel](https://fonts.google.com/specimen/Cinzel) and [Playfair Display](https://fonts.google.com/specimen/Playfair+Display), loaded from Google Fonts under the SIL Open Font License.
+
+## License
+
+The code is released under the [MIT License](LICENSE). The verses are by William Shakespeare (public domain).
