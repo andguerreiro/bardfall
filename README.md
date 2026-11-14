@@ -80,6 +80,7 @@ Every push to `main` publishes a new version. The site is served from the root o
 
 - Verses: William Shakespeare (public domain).
 - Fonts: [Cinzel](https://fonts.google.com/specimen/Cinzel) and [Playfair Display](https://fonts.google.com/specimen/Playfair+Display), loaded from Google Fonts under the SIL Open Font License.
+- Made with [Claude Sonnet 5.5](https://www.anthropic.com/claude) by Anthropic.
 
 ## License
 
