@@ -35,7 +35,7 @@ bardfall/
 ├── index.html           Page structure (header, controls, verse popup)
 ├── style.css            All styles, grouped by component
 ├── script.js            Animation, layout, controls and popup
-├── quotes.js            The verses (one per line)
+├── verses.js            The verses (one per line)
 ├── sitemap.xml          Page list for search engines
 ├── robots.txt           Crawler rules and sitemap location
 ├── favicon.png          Icon, 192 px
@@ -56,7 +56,7 @@ Then visit http://localhost:8000.
 
 ## Adding or editing verses
 
-Open `quotes.js` and add a line to the `QUOTES` list in the same format:
+Open `verses.js` and add a line to the `QUOTES` list in the same format:
 
 ```js
 { text: "Ripeness is all.", character: "Edgar", play: "King Lear", act: "Act 5, Scene 2" },
