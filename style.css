@@ -88,7 +88,7 @@ header p {
 .hint {
   position: fixed;
   z-index: 2;
-  bottom: clamp(82px,12vh,112px);
+  bottom: clamp(96px,13vh,126px);
   left: 0;
   right: 0;
   text-align: center;
@@ -109,7 +109,7 @@ header p {
 .controls {
   position: fixed;
   z-index: 3;
-  bottom: clamp(17px,3vh,28px);
+  bottom: clamp(32px,4vh,44px);
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -145,6 +145,31 @@ button:hover:not(:disabled),button:focus-visible {
 
 button:active {
   transform: scale(.97);
+}
+
+/* Footer */
+.site-footer {
+  position: fixed;
+  z-index: 3;
+  bottom: 9px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font: .6rem Cinzel, Georgia, serif;
+  letter-spacing: 1.5px;
+  pointer-events: none;
+}
+.site-footer a {
+  color: var(--muted);
+  opacity: .7;
+  text-decoration: none;
+  pointer-events: auto;
+}
+.site-footer a:hover,
+.site-footer a:focus-visible {
+  color: var(--gold-light);
+  opacity: 1;
+  text-decoration: underline;
 }
 
 /* Verse modal */
@@ -241,7 +266,7 @@ button:active {
     font-size: .62rem;
   }
   .hint {
-    bottom: 76px;
+    bottom: 96px;
   }
   .modal-card {
     border-radius: 14px;
@@ -266,6 +291,24 @@ button:active {
   }
   .controls {
     bottom: 8px;
+  }
+  .site-footer {
+    text-align: right;
+    padding-right: 14px;
+  }
+}
+
+/* Short and narrow screens: stack hint, controls and footer */
+@media (max-height:560px) and (max-width:600px) {
+  .controls {
+    bottom: 30px;
+  }
+  .hint {
+    bottom: 88px;
+  }
+  .site-footer {
+    text-align: center;
+    padding-right: 0;
   }
 }
 
